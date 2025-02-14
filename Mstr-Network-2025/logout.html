@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Conectando Master's - Tu Red de Soluciones Expertas en Tecnología">
+        <meta name="author" content="Mstr Network">
+        <title>Mstr-Network.com hotspot / logout</title>
+        <link rel="icon" type="image/png" href="/static/img/icon64x.png">
+        <meta http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate" />
+        <!--  
+        $(if refresh-timeout)
+        <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+        $(endif)
+-->
+        <link rel="stylesheet"
+            href="/static/plugin/bootstrap/5.3.3/css/bootstrap.min.css">
+        <!-- Estilis Personalizados -->
+        <link rel="stylesheet" href="/static/main.css">
+
+        <!-- Librería de fullPage.js -->
+        <link rel="stylesheet"
+            href="/static/plugin/fullPage.js/3.1.2/css/fullpage.min.css">
+        <!-- Librería de Font Awesome para íconos -->
+        <link rel="stylesheet"
+            href="/static/plugin/font-awesome/6.6.0/css/all.css">
+
+        <script language="JavaScript">
+            <!--
+                function openLogin() {
+                if (window.name != 'hotspot_logout') return true;
+                open('$(link-login)', '_blank', '');
+                window.close();
+                return false;
+                }
+            //-->
+            </script>
+
+    </head>
+
+    <body class="loading">
+        <!-- Pantalla de Carga -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <img src="/static/img/logo_0.png" alt="Mstr Network"
+                    class="loading-logo">
+                <p class="loading-text">Cargando<span class="dots"></span>
+                </p>
+            </div>
+        </div>
+        <!-- Navegación -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://mstr-network.com">
+                    <img src="/static/img/logo_0.png" alt="Mstr Network Logo"
+                        class="logo-img">
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <!--<i class="fas fa-fw fa-bars text-orange"></i>-->
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul
+                        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link border-3"
+                                href="#inicio-mstr">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link border-3"
+                                href="quienes-somos.html">Quiénes somos</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle border-3"
+                                href="#"
+                                role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#servicios-mstr">Internet &
+                                        Striming</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#planes-mstr">
+                                        <i class="fa fa-fw fa-plus"></i> Planes
+                                        de Internet</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#productos-mstr">Productos</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#otros-servicios-mstr">Otros</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link  border-3"
+                                href="#contacto-mstr">Contacto</a>
+                        </li>
+
+                    </ul>
+
+                    <form class="d-flex"
+                        role="form" action="$(link-login)"
+                        name="login"
+                        onSubmit="return openLogin()">
+                        <div
+                            class="d-flex justify-content-end">
+                            <input type="submit"
+                                class="btn btn-outline-orange pull-right"
+                                value="log in"></div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Contenedor de Secciones -->
+        <div id="fullpage">
+            <!-- Vista Inicial -->
+            <section id="inicio" data-anchor="inicio-mstr"
+                class="section inicio-section d-flex align-items-center">
+                <div class="container ">
+                    <div
+                        class="row justify-content-center ">
+                        <div class="col-md-6 d-none d-md-block col-12 mb-4">
+                            <h1
+                                class="text-left text-orange mt-3 mb-md-5">Conectando
+                                Master's</h1>
+                            <p class="lead text-white">Tu Red de Soluciones
+                                Expertas en
+                                Tecnología</p>
+                            <a href="#planes-mstr"
+                                class="btn btn-orange  ">
+                                <i
+                                    class="fa fa-fw fad fas fa-list-tree"></i>
+                                Ver Planes Disponibles</a>
+                        </div>
+                        <div class="col-md-6 d-md-none col-12 mb-3">
+                            <h3
+                                class="text-left text-orange mt-3 mb-md-5">Conectando
+                                Master's</h3>
+                            <small class=" text-white ">Tu Red de
+                                Soluciones
+                                Expertas en
+                                Tecnología</small>
+
+                        </div>
+                        <div class="col-md-6 col-12 text-center mb-4">
+                            <div class="card mt-3">
+                                <div class="card-body p-sm-5">
+                                    <h4
+                                        class="card-title text-bold text-uppercase">
+                                        Acabas de cerrar sesión</h4>
+                                    <div>
+
+                                        <div class="form-floating mb-3">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(username)"
+                                                id="floatingUser" />
+
+                                            <label
+                                                for="floatingUser">Username</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(ip)" id="floatingIP" />
+
+                                            <label
+                                                for="floatingIP">IP
+                                                address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(mac)"
+                                                id="floatingMAC" />
+
+                                            <label
+                                                for="floatingMAC">MAC
+                                                address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(uptime)"
+                                                id="floatingUptime" />
+
+                                            <label
+                                                for="floatingUptime">Session
+                                                time</label>
+                                        </div>
+                                        $(if session-time-left)
+                                        <div class="form-floating mb-3">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(session-time-left)"
+                                                id="floatingUptime" />
+
+                                            <label
+                                                for="floatingUptime">Time
+                                                left</label>
+                                        </div>
+
+                                        $(endif)
+                                        <div class="form-floating mb-3">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(bytes-in-nice) / $(bytes-out-nice)"
+                                                id="floatingUpDown" />
+
+                                            <label
+                                                for="floatingUpDown">Bytes Up/
+                                                Down:</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Scripts -->
+        <script src="/static/plugin/jQuery/jquery-3.7.1.min.js"></script>
+        <script
+            src="/static/plugin/bootstrap/5.3.3/js/bootstrap.bundle.js"></script>
+        <!-- Incluye scrolloverflow.min.js antes de fullpage.js -->
+        <script
+            src="/static/plugin/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"></script>
+        <!-- Librería de fullPage.js -->
+        <script src="/static/plugin/fullPage.js/3.1.2/js/fullpage.js"></script>
+        <!-- Librería de Font Awesome para íconos -->
+        <script src="/static/plugin/font-awesome/6.6.0/js/all.js"></script>
+
+        <script src="/static/data.js"></script>
+        <!-- main.js -->
+        <script src="/static/main.js?view=logout"></script>
+    </body>
+</html>

@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>mikrotik hotspot > status</title>
+        <link rel="icon" type="image/png" href="/static/img/icon64x.png" />
+        <meta http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate" />
+
+        <meta name="viewport"
+            content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
+        <!-- 
+        $(if refresh-timeout)
+        <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+        $(endif)
+-->
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <link rel="stylesheet" href="/static/style.css" media="screen" />
+        <link rel="stylesheet"
+            href="/static/plugin/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="/static/plugin/jQuery/jquery-3.7.1.min.js"></script>
+
+        <script language="JavaScript">
+        <!--
+        $(if advert-pending == 'yes')
+            var popup = '';
+        function focusAdvert() {
+            if (window.focus) popup.focus();
+        }
+        function openAdvert() {
+            popup = open('$(link-advert)', 'hotspot_advert', '');
+            setTimeout("focusAdvert()", 1000);
+        }
+        $(endif)
+        function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+            window.close();
+            return false;
+        }
+        //-->
+        </script>
+    </head>
+    <body $(if advert-pending=='yes' ) onLoad="openAdvert()" $(endif)>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 ">
+                        <img class="img-responsive"
+                            src="/static/img/logo_0.png" />
+                    </div>
+                    <div class="col-12 mb-sm-4">
+                        <h5 class="text-center h5 text-secondary">
+                            <b class="text-orange">Conectando Master's:</b>
+                            <small>Tu Red de Soluciones Expertas en
+                                Tecnología</small>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="contenido-sitio" class="row mb-sm-4">
+                    <div class="col">
+                        <div class="card ">
+                            <div class="card-body">
+                                <div class="form-group mb-sm-5">
+                                    <h3 class="text-orange">
+                                        <img class="icon-label"
+                                            src="/static/img/icon64x.png">
+                                        ¡Bienvenido $(if login-by == 'trial') !
+                                        $(elif login-by != 'mac') $(username)!
+                                        $(endif)
+                                    </h3>
+
+                                    <div class="mb-3 row">
+                                        <label
+                                            class="col-3  col-form-label">
+                                            IP:</label>
+                                        <div class="col"><input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(ip)" />
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label
+                                            class="col-3 col-form-label">
+                                            MAC:</label>
+                                        <div class="col"><input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(mac)" />
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-3 col-form-label">
+                                            Bytes Up/ Down:</label>
+                                        <div class="col"><input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(bytes-in-nice) / $(bytes-out-nice)" />
+                                        </div>
+                                    </div>
+
+                                    $(if session-time-left)
+                                    <div class="mb-3 row">
+                                        <label class="col-3 col-form-label">
+                                            Connected/ Left:</label>
+
+                                        <div class="col"><input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(uptime) / $(session-time-left)" />
+                                        </div>
+                                    </div>
+                                    $(else)
+                                    <div class="mb-3 row">
+                                        <label
+                                            class="col-3 col-form-label">Connected:</label>
+                                        <div class="col"><input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(uptime)" />
+                                        </div>
+                                    </div>
+                                    $(endif)
+                                    $(if blocked == 'yes')
+                                    <div class="mb-3 row">
+                                        <label
+                                            class="col-3 col-form-label">Status:</label>
+                                        <div class="col"
+                                            style="color: #FF8080">
+                                            <a href="$(link-advert)"
+                                                target="hotspot_advert"
+                                                class="btn-link">Sdvertisement</a>
+                                            required
+                                        </div>
+                                    </div>
+                                    $(elif refresh-timeout)
+                                    <div class="mb-3 row">
+                                        <label
+                                            class="col-3 col-form-label">Status
+                                            refresh:</label>
+                                        <div class="col">
+                                            <input type="label"
+                                                readonly
+                                                class="form-control"
+                                                value="$(refresh-timeout)" />
+                                        </div>
+                                    </div>
+                                    $(endif)
+                                    $(if login-by-mac != 'yes')
+                                    <form role="form" action="$(link-logout)"
+                                        name="logout"
+                                        onSubmit="return openLogout()">
+                                        <div class="d-flex justify-content-end">
+                                            <input type="submit"
+                                                class="btn btn-outline-orange pull-right"
+                                                value="Desconectarse">
+                                        </div>
+                                    </form>
+                                    $(endif)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <head>
+        <meta charset="utf-8" />
+        <title>Mstr Network</title>
+        <link rel="icon" type="image/png" href="/static/img/icon64x.png" />
+        <meta http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate" />
+
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+
+        <meta name="viewport"
+            content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <!--
+        <link rel="stylesheet" href="/bootstrap/bootstrap.css" media="screen" />
+        -->
+        <link rel="stylesheet" href="/static/style.css" media="screen" />
+        <link rel="stylesheet"
+            href="/static/plugin/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <script src="/static/plugin/jQuery/jquery-3.7.1.min.js"></script>
+        <script
+            src="/static/plugin/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+
+        $(if chap-id)
+        <form name="sendin" action="$(link-login-only)"
+            method="post">
+            <input type="hidden" name="username" />
+            <input type="hidden" name="password" />
+            <input type="hidden" name="dst"
+                value="http://wifi.mstr-network.com/status" />
+            <input type="hidden" name="popup" value="false" />
+        </form>
+
+        <script type="text/javascript" src="md5.js"></script>
+        <script type="text/javascript">
+            function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5(
+                "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
+            );
+            document.sendin.submit();
+            return false;
+            }
+        </script>
+        $(endif)
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 ">
+                        <img class="img-responsive"
+                            src="/static/img/logo_0.png" />
+                    </div>
+                    <div class="col-12 mb-sm-4">
+                        <h5 class="text-center h5 text-secondary">
+                            <b class="text-orange">Conectando Master's:</b>
+                            <small>Tu Red de Soluciones Expertas en
+                                Tecnología</small>
+                        </h5>
+                    </div>
+                </div>
+
+                <div id="contenido-sitio" class="row mb-sm-4">
+                    <div class="col">
+                        <div class="card ">
+                            <div class="card-body">
+                                <div class="form-group mb-sm-5">
+                                    <form
+                                        name="login"
+                                        action="$(link-login-only)"
+                                        method="post"
+                                        background="#A03472"
+                                        $(if chap-id)
+                                        onSubmit="return doLogin()"
+                                        $(endif)>
+                                        <div class="form-group mt-sm-4 mb-sm-4">
+                                            <div class="input-group">
+                                                <div
+                                                    class="input-group-prepend">
+                                                    <span
+                                                        class="input-group-text"><i
+                                                            class="fa-solid  fa-beat">
+                                                            <svg
+                                                                class="svg-icon"
+                                                                version="1.1"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="320"
+                                                                height="448"
+                                                                viewBox="0 0 320 448">
+                                                                <title></title>
+                                                                <g
+                                                                    id="icomoon-ignore">
+                                                                </g>
+                                                                <path
+                                                                    d="M320 349.75c0 36.5-24 66.25-53.25 66.25h-213.5c-29.25 0-53.25-29.75-53.25-66.25 0-65.75 16.25-141.75 81.75-141.75 20.25 19.75 47.75 32 78.25 32s58-12.25 78.25-32c65.5 0 81.75 76 81.75 141.75zM256 128c0 53-43 96-96 96s-96-43-96-96 43-96 96-96 96 43 96 96z"></path>
+                                                            </svg>
+                                                        </i>
+                                                    </span>
+                                                </div>
+                                                <input
+                                                    class="form-control"
+                                                    id="user"
+                                                    autocomplete="on"
+                                                    name="username"
+                                                    type="text"
+                                                    value="$(username)"
+                                                    placeholder="Usuario"
+                                                    required autofocus />
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-sm-4">
+                                            <div class="input-group ">
+                                                <div
+                                                    class="input-group-prepend">
+                                                    <span
+                                                        class="input-group-text">
+                                                        <i
+                                                            class="fa-solid  fa-shake">
+                                                            <svg
+                                                                class="svg-icon"
+                                                                version="1.1"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="512"
+                                                                height="512"
+                                                                viewBox="0 0 512 512">
+                                                                <path
+                                                                    d="M352 0c-88.365 0-160 71.634-160 160 0 10.013 0.929 19.808 2.688 29.312l-194.688 194.688v96c0 17.673 14.327 32 32 32h32v-32h64v-64h64v-64h64l41.521-41.521c17.005 6.158 35.348 9.521 54.479 9.521 88.365 0 160-71.634 160-160s-71.635-160-160-160zM399.937 160.063c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48z"></path>
+                                                            </svg>
+                                                        </i>
+                                                    </span>
+                                                </div>
+                                                <input
+                                                    class="form-control"
+                                                    id="pass"
+                                                    autocomplete="off"
+                                                    name="password"
+                                                    type="password"
+                                                    label="false"
+                                                    placeholder="Clave"
+                                                    required />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mb-sm-5">
+                                            $(if error)
+                                            <div class="alert alert-danger"
+                                                role="alert">
+                                                $(error)
+                                            </div>
+                                            $(endif)
+                                            $(if !error)
+                                            <div class="alert "
+                                                role="alert">
+                                                &nbsp;
+                                            </div>
+                                            $(endif)
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+
+                                            <a id="freebot"
+                                                class="btn btn-success mr-2 text-center"
+                                                href="javascript:void(0);"
+                                                data-toggle="modal"
+                                                data-target="#wifiModal">
+                                                <i class="fa-fw fa-solid ">
+                                                    <svg class="svg-icon"
+                                                        version="1.1"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="448" height="512"
+                                                        viewBox="0 0 448 512"><path
+                                                            d="M0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416z"
+                                                            fill-opacity="1" />
+                                                        <path class="rss-circle"
+                                                            d="M0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416z"
+                                                            fill-opacity="1" />
+                                                        <path
+                                                            class="rss-line rss-line1"
+                                                            d="M32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                                                            fill-opacity="0.5" />
+                                                        <path
+                                                            class="rss-line rss-line2"
+                                                            d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64z"
+                                                            fill-opacity="0.5" />
+                                                    </svg>
+                                                </i>
+                                                <span>Wifi Gratis</span>
+                                            </a>
+
+                                            <button id="boton"
+                                                class="btn btn-primary text-center">
+                                                <i class="fa-fw fa-solid ">
+                                                    <svg class="svg-icon"
+                                                        version="1.1"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="384" height="448"
+                                                        viewBox="0 0 384 448">
+                                                        <title></title>
+                                                        <g id="icomoon-ignore">
+                                                        </g>
+                                                        <path
+                                                            d="M296 224c0 4.25-1.75 8.25-4.75 11.25l-136 136c-3 3-7 4.75-11.25 4.75-8.75 0-16-7.25-16-16v-72h-112c-8.75 0-16-7.25-16-16v-96c0-8.75 7.25-16 16-16h112v-72c0-8.75 7.25-16 16-16 4.25 0 8.25 1.75 11.25 4.75l136 136c3 3 4.75 7 4.75 11.25zM384 136v176c0 39.75-32.25 72-72 72h-80c-4.25 0-8-3.75-8-8 0-7-3.25-24 8-24h80c22 0 40-18 40-40v-176c0-22-18-40-40-40h-72c-6.25 0-16 1.25-16-8 0-7-3.25-24 8-24h80c39.75 0 72 32.25 72 72z"></path>
+                                                    </svg>
+                                                </i>
+                                                <span>Iniciar Sesion</span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="wifiModal"
+                                            tabindex="-1" role="dialog"
+                                            aria-labelledby="wifiModalLabel"
+                                            aria-hidden="true">
+                                            <div
+                                                class="modal-dialog modal-dialog-centered modal-sm"
+                                                role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5
+                                                            class="modal-title text-orange"
+                                                            id="wifiModalLabel">Mstr-Network.com</h5>
+                                                        <button type="button"
+                                                            class="close text-danger"
+                                                            data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span
+                                                                aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="text-center">
+                                                            <strong
+                                                                class="text-success">¡Descubre
+                                                                todo lo que
+                                                                tenemos
+                                                                para
+                                                                ofrecerte!</strong>
+                                                            <br>
+                                                            Adquiere una <span
+                                                                style="background-color: #ffeb3b; padding: 2px 6px; border-radius: 4px;">ficha</span>
+                                                            y disfruta de acceso
+                                                            a
+                                                            nuestro servicio de
+                                                            streaming.
+                                                            <br>
+                                                            <span
+                                                                class="text-primary h4">
+                                                                <em>¡Te
+                                                                    va a
+                                                                    encantar!</em>
+                                                            </span>
+                                                        </p>
+                                                        <!-- Aquí van las imágenes -->
+                                                        <div
+                                                            class="text-center mt-4">
+                                                            <img
+                                                                src="/static/img/ficha.jpeg"
+                                                                alt="Imagen de una ficha"
+                                                                style="max-width: 100px; margin-right: 20px;" />
+                                                            <a
+                                                                href="http://media.mstr-network.com">
+                                                                <img
+                                                                    src="/static/img/iptv-mstr.jpg"
+                                                                    alt="Logo de Jellyfin o Emby"
+                                                                    style="max-width: 100px;"
+                                                                    class="text-secondary" /></a>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button"
+                                                            class="btn btn-outline-danger"
+                                                            data-dismiss="modal">Cancelar</button>
+                                                        $(if trial == 'yes')
+                                                        <a id="confirmWifi"
+                                                            href="$(link-login-only)?dst=http://wifi.mstr-network.com/status&amp;username=T-$(mac-esc)"
+                                                            class="btn btn-success">Wifi
+                                                            Gratis</a>
+                                                        $(endif)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--<input type="hidden" name="dst" value="$(link-orig)" />-->
+                                        <input type="hidden" name="dst"
+                                            value="http%3A%2F%2Fmstr.tk%2Fstatus" />
+                                        <input type="hidden" name="popup"
+                                            value="false" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col">
+                        <a href="http://wifi.mstr-network.com">
+                            <img class="img-responsive"
+                                src="/static/img/wifi.png" />
+                        </a>
+                    </div>
+
+                    <div class="col" id="loadingSpinner">
+                        <a href="#" id="abrirEmbyLink">
+                            <img class="img-responsive"
+                                src="/static/img/logo-emby-800.png" />
+                        </a>
+                        <div class="text-center loadingSpinner">
+                            <div class="spinner-border text-success d-none-X"
+                                role="status">
+                                <span class="sr-only">Cargando...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <marquee>
+                            <div class="text-center h3 text-primary">
+                                <b>Ya estamos aquí</b>, En tu localidad. Mas
+                                cerca
+                                de tí !!!
+                            </div>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        document.login.username.focus();
+        document.oncontextmenu = function () {
+            return false;
+        };
+        </script>
+    <script src="/static/script.js"></script>
+
+</html>

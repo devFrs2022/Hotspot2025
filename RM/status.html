@@ -1,0 +1,153 @@
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>mikrotik hotspot > status</title>
+        <link rel="icon" type="image/png" href="/img/icon64x.png" />
+        <meta name="viewport"
+            content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        $(if refresh-timeout)
+        <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+        $(endif)
+
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="-1">
+        <link rel="stylesheet" href="/bootstrap/bootstrap.css" media="screen">
+
+        <script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	   if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+        popup = open('$(link-advert)', 'hotspot_advert', '');
+        setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+        <style>
+        .icon-label{
+            
+            width: 32px;
+            height: 32px;
+            padding: 5px;
+            
+        }
+    </style>
+    </head>
+    <body $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
+        <div class="jumbotron text-center">
+
+            <div class="form-group">
+                <label class="col-xs-12 control-label">
+                    <img class="icon-label" src="/img/icon64x.png">
+                    $(if login-by == 'trial')
+                    Welcome trial user!
+                    $(elif login-by != 'mac')
+                    Welcome $(username)!
+                    $(endif)
+                </label>
+            </div>
+
+        </div>
+        <div class="container" style="padding-top: 1em;">
+            <form class="form-horizontal" role="form" action="$(link-logout)"
+                name="logout" onSubmit="return openLogout()">
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">IP Address:</label>
+                    <div class="col-xs-8">
+                        <input type="label" readonly class="form-control"
+                            value="$(ip)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">MAC address:</label>
+                    <div class="col-xs-8">
+                        <input type="label" readonly class="form-control"
+                            value="$(mac)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Bytes Up/
+                        Down:</label>
+                    <div class="col-xs-8">
+                        <input type="label" readonly class="form-control"
+                            value="$(bytes-in-nice) / $(bytes-out-nice)" />
+                    </div>
+                </div>
+
+                $(if session-time-left)
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Connected/
+                        Left:</label>
+                    <div class="col-xs-8">
+                        <input type="label" readonly class="form-control"
+                            value="$(uptime) / $(session-time-left)" />
+                    </div>
+                </div>
+                $(else)
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Connected:</label>
+                    <div class="col-xs-8">
+                        <input type="label" readonly class="form-control"
+                            value="$(uptime)" />
+                    </div>
+                </div>
+                <!--
+    <div class="form-group">
+        <label class="col-xs-4 control-label">Timeout:</label>
+        <div class="col-xs-8">
+            <input type="label" readonly class="form-control" value="$(idle-timeout)"/>
+        </div>
+    </div>
+    -->
+
+                $(endif)
+
+                $(if blocked == 'yes')
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Status:</label>
+                    <div class="col-xs-8">
+                        <div style="color: #FF8080">
+                            <a href="$(link-advert)" target="hotspot_advert"
+                                class="btn-link">Sdvertisement</a> required
+                        </div>
+                    </div>
+                </div>
+
+                $(elif refresh-timeout)
+                <!--
+    <div class="form-group">
+        <label class="col-xs-4 control-label">Status refresh:</label>
+        <div class="col-xs-8">
+            <input type="label" readonly class="form-control" value="$(refresh-timeout)"/>
+        </div>
+    </div>		
+    -->
+                $(endif)
+
+                $(if login-by-mac != 'yes')
+                <br>
+                <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+    <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+    <!-- end of user manager link -->
+                <input type="submit" class="btn btn-default pull-right"
+                    value="Desconectarse">
+                $(endif)
+            </form>
+
+        </div>
+    </body>
+</html>

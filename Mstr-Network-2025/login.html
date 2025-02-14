@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Conectando Master's - Tu Red de Soluciones Expertas en Tecnología">
+        <meta name="author" content="Mstr Network">
+        <title>Mstr-Network.com hotspot</title>
+        <link rel="icon" type="image/png" href="/static/img/icon64x.png">
+        <meta http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate" />
+        <link rel="stylesheet"
+            href="/static/plugin/bootstrap/5.3.3/css/bootstrap.min.css">
+        <!-- Estilis Personalizados -->
+        <link rel="stylesheet" href="/static/main.css">
+
+        <!-- Librería de fullPage.js -->
+        <link rel="stylesheet"
+            href="/static/plugin/fullPage.js/3.1.2/css/fullpage.min.css">
+        <!-- Librería de Font Awesome para íconos -->
+        <link rel="stylesheet"
+            href="/static/plugin/font-awesome/6.6.0/css/all.css">
+
+    </head>
+
+    <body class="loading">
+
+        $(if chap-id)
+        <form name="sendin" action="$(link-login-only)"
+            method="post">
+            <input type="hidden" name="username" />
+            <input type="hidden" name="password" />
+            <input type="hidden" name="dst"
+                value="http://wifi.mstr-network.com/status" />
+            <input type="hidden" name="popup" value="false" />
+        </form>
+
+        <script type="text/javascript" src="md5.js"></script>
+        <script type="text/javascript">
+            function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5(
+                "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
+            );
+            document.sendin.submit();
+            return false;
+            }
+        </script>
+        $(endif)
+
+        <!-- Pantalla de Carga -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <img src="/static/img/logo_0.png" alt="Mstr Network"
+                    class="loading-logo">
+                <p class="loading-text">Cargando<span class="dots"></span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://mstr-network.com">
+                    <img src="/static/img/logo_0.png" alt="Mstr Network Logo"
+                        class="logo-img">
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <!--<i class="fas fa-fw fa-bars text-orange"></i>-->
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul
+                        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link border-3"
+                                href="#inicio-mstr">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link border-3"
+                                href="quienes-somos.html">Quiénes somos</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle border-3"
+                                href="#"
+                                role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#servicios-mstr">Internet &
+                                        Striming</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#planes-mstr">
+                                        <i class="fa fa-fw fa-plus"></i> Planes
+                                        de Internet</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#productos-mstr">Productos</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="#otros-servicios-mstr">Otros</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link  border-3"
+                                href="#contacto-mstr">Contacto</a>
+                        </li>
+                    </ul>
+                    <!--
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search"
+                            placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success"
+                            type="submit">Search</button>
+                    </form>
+                     -->
+                </div>
+            </div>
+        </nav>
+        <form
+            name="login"
+            action="$(link-login-only)"
+            method="post"
+            background="#A03472"
+            $(if chap-id)
+            onSubmit="return doLogin()"
+            $(endif)>
+            <!-- Contenedor de Secciones -->
+            <div id="fullpage">
+                <!-- Vista Inicial -->
+                <section id="inicio" data-anchor="inicio-mstr"
+                    class="section inicio-section d-flex align-items-center">
+                    <div class="container ">
+                        <div
+                            class="row justify-content-center ">
+                            <div class="col-md-6 d-none d-md-block col-12 mb-4">
+                                <h1
+                                    class="text-left text-orange mt-3 mb-md-5">Conectando
+                                    Master's</h1>
+                                <p class="lead text-white">Tu Red de Soluciones
+                                    Expertas en
+                                    Tecnología</p>
+                                <a href="#planes-mstr"
+                                    class="btn btn-orange  ">
+                                    <i
+                                        class="fa fa-fw fad fas fa-list-tree"></i>
+                                    Ver Planes Disponibles</a>
+                            </div>
+                            <div class="col-md-6 d-md-none col-12 mb-3">
+                                <h3
+                                    class="text-left text-orange mt-3 mb-md-5">Conectando
+                                    Master's</h3>
+                                <small class=" text-white ">Tu Red de
+                                    Soluciones
+                                    Expertas en
+                                    Tecnología</small>
+
+                            </div>
+                            <div class="col-md-6 col-12 text-center mb-4">
+                                <div class="card mt-3">
+                                    <div class="card-body p-sm-5">
+                                        <h4
+                                            class="card-title text-bold text-uppercase">Inicio
+                                            de sesion</h4>
+                                        <div class="mb-sm-5">
+
+                                            <div
+                                                class=" mt-sm-4 mb-sm-4">
+                                                <div class="form-floating mb-3">
+                                                    <input
+                                                        class="form-control"
+                                                        id="user"
+                                                        autocomplete="on"
+                                                        name="username"
+                                                        type="text"
+                                                        value="$(username)"
+                                                        placeholder="Usuario"
+                                                        required autofocus />
+                                                    <label
+                                                        for="user">Usuario</label>
+                                                </div>
+
+                                                <div class="form-floating mb-3">
+                                                    <input
+                                                        class="form-control"
+                                                        id="pass"
+                                                        autocomplete="off"
+                                                        name="password"
+                                                        type="password"
+                                                        label="false"
+                                                        placeholder="Clave"
+                                                        required />
+                                                    <label
+                                                        for="pass">Clave</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-sm-5">
+                                                $(if error)
+                                                <div class="alert alert-danger"
+                                                    role="alert">
+                                                    $(error)
+                                                </div>
+                                                $(endif)
+                                                $(if !error)
+                                                <div class="alert "
+                                                    role="alert">
+                                                    &nbsp;
+                                                </div>
+
+                                                $(endif)
+                                            </div>
+                                            <div
+                                                class="d-grid gap-2 d-flex justify-content-end">
+                                                <a id="freebot"
+                                                    class="btn btn-success mr-2 text-center"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#wifiModal">
+                                                    <i
+                                                        class="fad fas fa-rss"></i>
+                                                    <span>Wifi Gratis</span>
+                                                </a>
+
+                                                <button id="boton"
+                                                    class="btn btn-primary text-center">
+                                                    <i
+                                                        class="fas fa-right-to-bracket"></i>
+                                                    <span>Iniciar Sesion</span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade"
+                id="wifiModal"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="wifiModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div
+                            class="modal-header">
+                            <h4
+                                class="modal-title text-orange"
+                                id="wifiModalLabel">Mstr-Network.com</h4>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p
+                                class="text-center">
+                                <strong
+                                    class="text-success">¡Descubre
+                                    todo lo que
+                                    tenemos
+                                    para
+                                    ofrecerte!</strong>
+                                <br>
+                                Adquiere una
+                                <span
+                                    style="background-color: #ffeb3b; padding: 2px 6px; border-radius: 4px;">ficha</span>
+                                y disfruta de
+                                acceso
+                                a
+                                nuestro servicio
+                                de
+                                streaming.
+                                <br>
+                                <span
+                                    class="text-primary h4">
+                                    <em>¡Te
+                                        va a
+                                        encantar!</em>
+                                </span>
+                            </p>
+                            <!-- Aquí van las imágenes -->
+                            <div
+                                class="text-center mt-4">
+                                <img
+                                    src="/static/img/ficha.jpeg"
+                                    alt="Imagen de una ficha"
+                                    style="max-width: 100px; margin-right: 20px;" />
+                                <a
+                                    href="http://media.mstr-network.com">
+                                    <img
+                                        src="/static/img/iptv-mstr.jpg"
+                                        alt="Logo de Jellyfin o Emby"
+                                        style="max-width: 100px;"
+                                        class="text-secondary" /></a>
+                            </div>
+                        </div>
+                        <div
+                            class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-outline-danger"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            $(if trial == 'yes')
+                            <a id="confirmWifi"
+                                href="$(link-login-only)?dst=http://wifi.mstr-network.com/status&amp;username=T-$(mac-esc)"
+                                class="btn btn-success">Wifi
+                                Gratis</a>
+                            $(endif)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<input type="hidden" name="dst" value="$(link-orig)" />-->
+            <input type="hidden" name="dst"
+                value="http%3A%2F%2Fmstr.tk%2Fstatus" />
+            <input type="hidden" name="popup"
+                value="false" />
+        </form>
+        <!-- Scripts -->
+        <script src="/static/plugin/jQuery/jquery-3.7.1.min.js"></script>
+        <script
+            src="/static/plugin/bootstrap/5.3.3/js/bootstrap.bundle.js"></script>
+        <!-- Incluye scrolloverflow.min.js antes de fullpage.js -->
+        <script
+            src="/static/plugin/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"></script>
+        <!-- Librería de fullPage.js -->
+        <script src="/static/plugin/fullPage.js/3.1.2/js/fullpage.js"></script>
+        <!-- Librería de Font Awesome para íconos -->
+        <script src="/static/plugin/font-awesome/6.6.0/js/all.js"></script>
+
+        <script src="/static/data.js"></script>
+        <!-- main.js -->
+        <script src="/static/main.js?view=login"></script>
+
+    </body>
+</html>

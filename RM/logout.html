@@ -1,0 +1,89 @@
+<html>
+<head>
+
+
+<meta charset="utf-8">
+<title>mikrotik hotspot > logout</title>
+<link rel="icon" type="image/png" href="/img/icon64x.png" />
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" href="/bootstrap/bootstrap.css" media="screen">
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+
+    
+    <div class="jumbotron text-center">
+        <div class="form-group">	
+            <label  class="col-xs-12 control-label">You have just logged out</label>		
+        </div>   
+    </div>
+    
+    <div class="container" style="padding-top: 1em;">
+	
+        <div class="form-horizontal" >           
+            <div class="form-group">
+                <label class="col-xs-4 control-label">user name:</label>
+                <div class="col-xs-8">
+                    <input type="label" readonly class="form-control" value="$(username)" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">IP address:</label>
+                <div class="col-xs-8">
+                    <input type="label" readonly class="form-control" value="$(ip)" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">MAC address:</label>
+                <div class="col-xs-8">
+                    <input type="label" readonly class="form-control" value="$(mac)"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-xs-4 control-label">Session time:</label>
+                <div class="col-xs-8">
+                    <input type="label" readonly class="form-control" value="$(uptime)"/>
+                </div>
+            </div>	
+            
+$(if session-time-left)
+            <div class="form-group">
+                <label class="col-xs-4 control-label">Time left:</label>
+                <div class="col-xs-8">
+                    <input type="label" readonly class="form-control" value="$(session-time-left)"/>
+                </div>
+            </div>	
+$(endif)
+            <div class="form-group">
+                <label class="col-xs-4 control-label">Bytes Up/ Down:</label>
+                <div class="col-xs-8">
+                    <input type="label" readonly class="form-control" value="$(bytes-in-nice) / $(bytes-out-nice)"/>
+                </div>
+            </div>	
+
+
+            <form class="form-horizontal" role="form" action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <input type="submit" class="btn btn-default pull-right" value="log in">    
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

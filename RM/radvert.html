@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>mikrotik hotspot > advertisement</title>
+<link rel="icon" type="image/png" href="/img/icon64x.png" />
+<meta http-equiv="refresh" content="2; url=$(link-orig)">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="stylesheet" href="/bootstrap/bootstrap.css" media="screen">
+   
+
+<script language="JavaScript">
+<!--
+    var popup = '';
+    function openOrig() {
+	if (window.focus) popup.focus();
+	location.href = '$(link-orig)';
+    }
+    function openAd() {
+	location.href = '$(link-redirect)';
+    }
+    function openAdvert() {
+	if (window.name != 'hotspot_advert') {
+		popup = open('$(link-redirect)', 'hotspot_advert', '');
+		setTimeout("openOrig()", 1000);
+		return;
+	}
+	setTimeout("openAd()", 1000);
+    }
+//-->
+</script>
+</head>
+<body onLoad="openAdvert()">
+    <div class="jumbotron text-center">      
+        <div class="container" style="padding-top: 1em;">
+            <div class="form-horizontal">
+                <div class="form-group">	
+                    <label  class="col-xs-12 control-label">Advertisement.</label>		
+                </div>
+                <div class="form-group">	
+                    <label  class="col-xs-12 control-label">
+                        If nothing happens, open
+                        <a href="$(link-redirect)" target="hotspot_advert">
+                            advertisement
+                        </a>
+                        manually.
+                    </label>		
+                </div>
+            </div>    
+        </div>        
+    </div>
+    
+
+</body>
+</html>

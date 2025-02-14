@@ -1,0 +1,17 @@
+$(if http-status == 302)Hotspot redirect$(endif)
+$(if http-header == "Location")$(link-redirect)$(endif)
+<html>
+  <head>
+    <title>...</title>
+    <link rel="icon" type="image/png" href="/static/img/icon64x.png" />
+    <!--<meta http-equiv="refresh" content="0; url=$(link-redirect)">-->
+    <meta http-equiv="refresh"
+      content="0; url=http://wifi.mstr-network.com/status">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+  </head>
+  <body>
+    <p>Redireccionando... Si no eres redirigido automáticamente, <a
+        href="http://wifi.mstr-network.com/status">haz clic aquí</a>.</p>
+  </body>
+</html>
